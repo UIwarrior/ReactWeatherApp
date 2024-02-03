@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { geocode } from "../API/googleMap";
 import { fetchWeatherApi } from "openmeteo";
+import { WeatherCard } from "./Card";
 
 export const Home = () => {
   const [location, setLocation] = useState("");
@@ -72,10 +73,7 @@ export const Home = () => {
         <h2>Weather Now</h2>
         {weather.map((el) => (
           <div>
-            <p>Day</p>
-            <div>{el.time}</div>
-            <div>weather</div>
-            <div>{el.temp}</div>
+              <WeatherCard />
           </div>
         ))}
       </div>
